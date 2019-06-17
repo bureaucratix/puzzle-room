@@ -3,13 +3,176 @@
         <meta charset="UTF-8">
         <title>Puzzle Room</title>
         <link rel="stylesheet" href="style.css">
+        <script src="./src/index.js"></script>
     </head>
 
     <body>
 
-    <h1>My First Heading</h1>
+ 
+    <div id='content'>
+        <div class="grid-container">
+            <div id=1></div>
+            <div id=2></div>
+            <div id=3></div>
+            <div id=4></div>
+            <div id=5></div>
+            <div id=6></div>
+            <div id=7></div>
+            <div id=8></div>
+            <div id=9></div>
+            <div id=10></div>
+            <div id=11></div>
+            <div id=12></div>
+            <div id=13></div>
+            <div id=14></div>
+            <div id=15></div>
+            <div id=16></div>
+            <div id=17></div>
+            <div id=18></div>
+            <div id=19></div>
+            <div id=20></div>
+            <div id=21></div>
+            <div id=22></div>
+            <div id=23></div>
+            <div id=24></div>
+            <div id=25></div>
+            <div id=26></div>
+            <div id=27></div>
+            <div id=28></div>
+            <div id=29></div>
+            <div id=30></div>
+            <div id=31></div>
+            <div id=32></div>
+            <div id=33></div>
+            <div id=34></div>
+            <div id=35></div>
+            <div id=36></div>
+            <div id=37></div>
+            <div id=38></div>
+            <div id=39></div>
+            <div id=40></div>
+            <div id=41></div>
+            <div id=42></div>
+            <div id=43></div>
+            <div id=44></div>
+            <div id=45></div>
+            <div id=46></div>
+            <div id=47></div>
+            <div id=48></div>
+            <div id=49></div>
+            <div id=50></div>
+            <div id=51></div>
+            <div id=52></div>
+            <div id=53></div>
+            <div id=54></div>
+            <div id=55></div>
+            <div id=56></div>
+            <div id=57></div>
+            <div id=58></div>
+            <div id=59></div>
+            <div id=60></div>
+            <div id=61></div>
+            <div id=62></div>
+            <div id=63></div>
+            <div id=64></div>
+            <div id=65></div>
+            <div id=66></div>
+            <div id=67></div>
+            <div id=68></div>
+            <div id=69></div>
+            <div id=70></div>
+            <div id=71></div>
+            <div id=72></div>
+            <div id=73></div>
+            <div id=74></div>
+            <div id=75></div>
+            <div id=76></div>
+            <div id=77></div>
+            <div id=78></div>
+            <div id=79></div>
+            <div id=80></div>
+            <div class="TEXT-AREA"></div>
+            <div id=81></div>
+            <div id=82></div>
+        </div>
 
-    <p>My first paragraph.</p>
+        <div class="chessboard hidden">
+            <!-- 1st -->
+            <div class="white" id="a8">&#9820;</div>
+            <div class="black" id="b8"></div>
+            <div class="white" id="c8"></div>
+            <div class="black" id="d8">&#9819;</div>
+            <div class="white" id="e8"></div>
+            <div class="black" id="f8">&#9820;</div>
+            <div class="white" id="g8">&#9818;</div>
+            <div class="black" id="h8"></div>
+            <!-- 2nd -->
+            <div class="black" id="a7">&#9823;</div>
+            <div class="white" id="b7"></div>
+            <div class="black" id="c7">&#9823;</div>
+            <div class="white" id="d7"></div>
+            <div class="black" id="e7"></div>
+            <div class="white" id="f7">&#9823;</div>
+            <div class="black" id="g7">&#9823;</div>
+            <div class="white" id="h7">&#9823;</div>
+            <!-- 3th -->
+            <div class="white" id="a6">&#9821;</div>
+            <div class="black" id="b6">&#9823;</div>
+            <div class="white" id="c6">&#9822;</div>
+            <div class="black" id="d6">&#9821;</div>
+            <div class="white" id="e6">&#9823;</div>
+            <div class="black" id="f6">&#9822;</div>
+            <div class="white" id="g6"></div>
+            <div class="black" id="h6"></div>
+            <!-- 4st -->
+            <div class="black" id="a5"></div>
+            <div class="white" id="b5"></div>
+            <div class="black" id="c5"></div>
+            <div class="white" id="d5"></div>
+            <div class="black" id="e5"></div>
+            <div class="white" id="f5"></div>
+            <div class="black" id="g5"></div>
+            <div class="white" id="h5"></div>
+            <!-- 5th -->
+            <div class="white" id="a4">&#9817;</div>
+            <div class="black" id="b4"></div>
+            <div class="white" id="c4"></div>
+            <div class="black" id="d4"></div>
+            <div class="white" id="e4"></div>
+            <div class="black" id="f4"></div>
+            <div class="white" id="g4">&#9817;</div>
+            <div class="black" id="h4"></div>
+            <!-- 6th -->
+            <div class="black" id="a3"></div>
+            <div class="white" id="b3">&#9817;</div>
+            <div class="black" id="c3">&#9816;</div>
+            <div class="white" id="d3"></div>
+            <div class="black" id="e3">&#9817;</div>
+            <div class="white" id="f3">&#9817;</div>
+            <div class="black" id="g3"></div>
+            <div class="white" id="h3">&#9817;</div>
+            <!-- 7th -->
+            <div class="white" id="a2"></div>
+            <div class="black" id="b2">&#9815;</div>
+            <div class="white" id="c2">&#9817;</div>
+            <div class="black" id="d2">&#9817;</div>
+            <div class="white" id="e2"></div>
+            <div class="black" id="f2"></div>
+            <div class="white" id="g2">&#9815;</div>
+            <div class="black" id="h2"></div>
+            <!-- 8th -->
+            <div class="black" id="a1">&#9814;</div>
+            <div class="white" id="b1"></div>
+            <div class="black" id="c1"></div>
+            <div class="white" id="d1">&#9813;</div>
+            <div class="black" id="e1">&#9812;</div>
+            <div class="white" id="f1"></div>
+            <div class="black" id="g1">&#9816;</div>
+            <div class="white" id="h1">&#9814;</div>
+        </div>
+    </div>
 
     </body>
 </html>
+
+
