@@ -3,7 +3,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     let textbox = document.querySelector(".TEXT-AREA")
     textbox.classList.add('text-area')
     textbox.textContent = 'Welcome to Flat Iron! Click around for a BIG SURPRISE'
-  
     
     loadHomePageListeners();
     
@@ -12,27 +11,24 @@ window.addEventListener('DOMContentLoaded', (event) => {
 const homepageNavigator = document.getElementById('82') 
 
 function setHomePageImage(){
-    document.body.style.backgroundImage ="url('../frontend/images/IMG-5707.JPG')";
-    
+    document.body.style.backgroundImage ="url('../frontend/images/IMG-5707.JPG')";  
     removeNavigator();
+    loadHomePageListeners();
 }
-
 
 function loadHomePageListeners(){
     let microwave = document.getElementById('39')
-    
     microwave.addEventListener('click', ()=>{
         loadMicrowaveEvent(microwave);
     })
     
 }
 
-
 function loadMicrowaveEvent(microwave){
     document.body.style.backgroundImage ="url('images/milan.jpg')";
     loadMicrowaveListeners(microwave);
     let textbox = document.querySelector(".TEXT-AREA")
-    textbox.textContent = 'Milan has a riddle for you! :D '
+    textbox.remove()
     addRiddleForm();
   }
 
@@ -60,28 +56,60 @@ function removeNavigator(){
     }
 
 function addRiddleForm(){
-     
-    var f = document.createElement("form");
-    f.setAttribute('method',"post");
-    f.setAttribute('action',"submit.php");
+    let form = document.createElement("form");
+    form.id = 'riddle-form'
 
-    // var r = document.createElement('p')
+    let riddle = document.createElement('p')
+    riddle.id = 'riddle-input'
+    form.appendChild(riddle)
+    document.body.appendChild(form)  
+
+    let r = document.createElement('p')
+    let answerField = document.createElement("input");
+    form.appendChild(answerField)
     
-    // fetch('http://localhost:3000//api/v1/riddles')
-    // .then(resp => resp.json())
-    // .then(
-    // )
-    // r.textContent = Riddle[0]
 
-    var i = document.createElement("input"); //input element, text
-    i.setAttribute('type',"text");
+    let submit = document.createElement('input');
+    submit.setAttribute('type','submit');
+    form.appendChild(submit)
+    form.addEventListener('submit', function(event){
+        
+        event.preventDefault();
+        let answer = (event.target[0].value)
+        handleRiddleAnswer(answer, r.textContent)
+      });
 
-    var s = document.createElement("input"); //input element, Submit button
-    s.setAttribute('type',"submit");
-    s.setAttribute('value',"Submit");
-    f.appendChild(r);
-    f.appendChild(i);
-    f.appendChild(s);   
-    document.body.appendChild(f)   
+   
+    let URL = 'http://localhost:3000//api/v1/riddles'
+
+    fetch(URL, {mode: 'cors'})
+    .then(res=>res.json())
+    .then(json=>{
+        getRiddle(json)
+    })
+}
+let currentRiddle;
+function getRiddle(json){
+    const riddle = json[Math.floor(Math.random()*json.length)];
+    const r = document.getElementById('riddle-input')
+    r.textContent = riddle.question
+    currentRiddle = riddle
 }
 
+function handleRiddleAnswer(answer){
+    document.getElementById('riddle-form').remove()
+    answer.toLowerCase()
+    let h = document.createElement('h1')
+    let milanResponse;
+    if (answer.includes(currentRiddle.answer)){
+        milanResponse = 'Correct, young budding software developer!! I have unlocked a special feature in the kitchen just for you... perhaps forgo the booch and go get your caffeine fix *HINT HINT*'
+        h.textContent = milanResponse
+        setTimeout(function(){ setHomePageImage(), loadHomePageListeners}, 3000);
+      }else{
+        milanResponse = `nope, dummy. The answer is ${currentRiddle.answer}! Don't come back here until you are ready for this HEAT.`
+        h.textContent = milanResponse
+        setTimeout(function(){setHomePageImage(), loadHomePageListeners()}, 3000);
+      }
+    h.classList.add('speech-bubble')
+    document.body.prepend(h)
+}

@@ -76,3 +76,24 @@ body {
     width: 160px;
     height: 160px;
 }
+
+.speech-bubble {
+	position: relative;
+	background: #35b8bb;
+	border-radius: .4em;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 43px solid transparent;
+	border-top-color: #35b8bb;
+	border-bottom: 0;
+	border-left: 0;
+	margin-left: -21.5px;
+	margin-bottom: -43px;
+}
