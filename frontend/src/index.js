@@ -61,7 +61,7 @@ function addRiddleForm(){
 
     let riddle = document.createElement('p')
     riddle.id = 'riddle-input'
-    form.appendChild(riddle)
+    document.body.appendChild(riddle)
     document.body.appendChild(form)  
 
     let r = document.createElement('p')
@@ -93,6 +93,7 @@ function getRiddle(json){
     const riddle = json[Math.floor(Math.random()*json.length)];
     const r = document.getElementById('riddle-input')
     r.textContent = riddle.question
+    r.classList.add('speech-bubble')
     currentRiddle = riddle
 }
 
