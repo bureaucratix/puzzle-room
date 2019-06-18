@@ -1,15 +1,14 @@
 window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
-    let textbox = document.querySelector(".TEXT-AREA")
-   
-    setHomePageImage();
-    loadHomePageListeners();
-    
+    loadHomePage();
 });
+
+
 const container = document.getElementById("content");
 const homepageNavigator = document.getElementById('82') 
 
-function setHomePageImage(){
+function loadHomePage(){
+    clearScene();
     const container = document.getElementById("content");
     document.body.style.backgroundImage ="url('../frontend/images/IMG-5707.JPG')"; 
     
@@ -22,13 +21,11 @@ function setHomePageImage(){
 }
     let textArea = document.createElement('text-area')
     textArea.classList.add('text-area')
+    textArea.textContent = 'add content here for user to view'
     homepageDiv.appendChild(textArea)
     container.appendChild(homepageDiv);
-    loadHomePageListeners();
-}
 
-
-function loadHomePageListeners(){
+        //load listeners for homepage(HELP, MICROWAVE, MESSASGE BOARD)
     let help_button = document.getElementById('11')
     help_button.classList.add('help-button')
     let microwave = document.getElementById('38')
@@ -37,24 +34,24 @@ function loadHomePageListeners(){
         loadMessageBoard();
     })
     microwave.addEventListener('click', ()=>{
-        loadMicrowaveEvent(microwave);
+        loadMicrowavePage(microwave);
     })
     
 }
 
-function loadMicrowaveEvent(microwave){
+
+function loadMicrowavePage(microwave){
     document.body.style.backgroundImage ="url('images/milan.jpg')";
     loadMicrowaveListeners(microwave);
-    let textbox = document.querySelector(".TEXT-AREA")
-    textbox.remove()
+ 
     addRiddleForm();
   }
 
 function loadMicrowaveListeners(microwave){
 
-    microwave.removeEventListener('click', ()=>{
-        loadMicrowaveEvent(microwave);
-  })
+//     microwave.removeEventListener('click', ()=>{
+//         loadMicrowavePage(microwave);
+//   })
 
     loadNavigator();
 }
@@ -63,7 +60,7 @@ function loadNavigator(){
     const homepageNavigator = document.getElementById('82') 
     homepageNavigator.classList.add('navigator')
     homepageNavigator.addEventListener('click', ()=>{
-        setHomePageImage();
+        loadHomePage();
         loadHomePageListeners();
     })
 }
@@ -78,6 +75,7 @@ function loadNavigator(){
 function addRiddleForm(){
     let riddleDiv = document.createElement('div')
     document.body.prepend(riddleDiv)
+    riddleDiv.setAttribute('id', 'riddle-header')
     let form = document.createElement("form");
     form.id = 'riddle-form'
 
@@ -91,7 +89,6 @@ function addRiddleForm(){
     let answerField = document.createElement("input");
     form.appendChild(answerField)
     
-
     let submit = document.createElement('input');
     submit.setAttribute('type','submit');
     submit.classList.add('riddle-button')
@@ -146,11 +143,11 @@ function handleRiddleAnswer(answer){
     if (answer.includes(currentRiddle.answer)){
         milanResponse = 'Correct, young budding software developer!! I have unlocked a special feature in the kitchen just for you... perhaps forgo the booch and go get your caffeine fix *HINT HINT*'
         h.textContent = milanResponse
-        setTimeout(function(){ setHomePageImage(), loadHomePageListeners}, 3000);
+        setTimeout(function(){ loadHomePage()}, 3000);
       }else{
         milanResponse = `nope, dummy. The answer is ${currentRiddle.answer}! Don't come back here until you are ready for this HEAT.`
         h.textContent = milanResponse
-        setTimeout(function(){setHomePageImage(), loadHomePageListeners()}, 3000);
+        setTimeout(function(){loadHomePage()}, 3000);
       }
     h.classList.add('speech-bubble')
     riddleDiv.appendChild(h)
