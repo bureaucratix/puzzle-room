@@ -9,22 +9,20 @@ body {
 
 
   .grid-container {
-
     height: 100%;
     width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA ." ". . . . . . . . . .";
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA .";
+}
+
+.grid-container div img{
+    max-width: 100px;
+    max-height: 100px;
 }
 
 .TEXT-AREA { grid-area: TEXT-AREA; }
-
-.navigator{
-    background-image: url('../frontend/images/nav.png');
-    background-size: contain;
-    background-repeat:no-repeat;
-}
 
 .help-button{
     background-image: url('../frontend/images/helpbutton.jpg');
