@@ -1,31 +1,34 @@
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
     loadHomePage();
 });
 
+<<<<<<< HEAD
 
 let container = document.getElementById("content");
 const homepageNavigator = document.getElementById('82') 
 
+=======
+>>>>>>> 22af18f71f5d01d9cb5aba372cc711c8c9ccdc5c
 function loadHomePage(){
     clearScene();
     const container = document.getElementById("content");
     document.body.style.backgroundImage ="url('../frontend/images/IMG-5707.JPG')"; 
     
-    let homepageDiv = document.createElement('div')
-    homepageDiv.classList.add('grid-container');
+    let gridContainer = document.createElement('div')
+    gridContainer.classList.add('grid-container');
     for(let i=0; i < 83; i++){
         let newDiv = document.createElement('div');
         newDiv.id = i;
-        homepageDiv.appendChild(newDiv);
-}
+        gridContainer.appendChild(newDiv);
+    }
     let textArea = document.createElement('text-area')
     textArea.classList.add('text-area')
-    textArea.textContent = 'add content here for user to view'
-    homepageDiv.appendChild(textArea)
-    container.appendChild(homepageDiv);
+    textArea.textContent = '[[TEXT BOX AREA. MAIN PAGE HELLO]]'
+    gridContainer.appendChild(textArea)
+    container.appendChild(gridContainer);
 
-        //load listeners for homepage(HELP, MICROWAVE, MESSASGE BOARD)
+    //load listeners for homepage(HELP, MICROWAVE, MESSASGE BOARD)
     let help_button = document.getElementById('11')
     help_button.classList.add('help-button')
     let microwave = document.getElementById('38')
@@ -34,47 +37,43 @@ function loadHomePage(){
         loadMessageBoard();
     })
     microwave.addEventListener('click', ()=>{
-        loadMicrowavePage(microwave);
+        loadRiddlePage();
     })
-    
 }
 
 
-function loadMicrowavePage(microwave){
+function loadRiddlePage(){
+    clearScene();
+    const container = document.getElementById("content");
     document.body.style.backgroundImage ="url('images/milan.jpg')";
-    loadMicrowaveListeners(microwave);
- 
+    let gridContainer = document.createElement('div')
+    gridContainer.classList.add('grid-container');
+    for(let i=0; i < 69; i++){
+        let newDiv = document.createElement('div');
+        newDiv.id = i;
+        gridContainer.appendChild(newDiv);
+    }
+    container.appendChild(gridContainer)
+    loadBackButton();
     addRiddleForm();
   }
 
-function loadMicrowaveListeners(microwave){
-
-//     microwave.removeEventListener('click', ()=>{
-//         loadMicrowavePage(microwave);
-//   })
-
-    loadNavigator();
-}
-
-function loadNavigator(){
-    const homepageNavigator = document.getElementById('82') 
-    homepageNavigator.classList.add('navigator')
-    homepageNavigator.addEventListener('click', ()=>{
+function loadBackButton(){
+    const backDiv = document.getElementById('59') 
+    const backbutton = document.createElement('img')
+    backbutton.src = "./images/down.png"
+    backDiv.appendChild(backbutton)
+    backDiv.addEventListener('click', ()=>{
         loadHomePage();
-        loadHomePageListeners();
     })
 }
 
-// Dont think we need this with new clearScene addition...
-
-//  function removeNavigator(){
-//     const homepageNavigator = document.getElementById('82') 
-//     homepageNavigator.classList.remove('navigator')
-//     }
 
 function addRiddleForm(){
     let riddleDiv = document.createElement('div')
-    document.body.prepend(riddleDiv)
+    const container = document.getElementById("content");
+    // document.body.prepend(riddleDiv)
+    container.prepend(riddleDiv)
     riddleDiv.setAttribute('id', 'riddle-header')
     let form = document.createElement("form");
     form.id = 'riddle-form'
@@ -85,7 +84,7 @@ function addRiddleForm(){
     riddleDiv.appendChild(riddle)
     riddleDiv.appendChild(form)  
 
-    let r = document.createElement('h1')
+    let r = document.createElement('h2')
     let answerField = document.createElement("input");
     form.appendChild(answerField)
     
@@ -103,12 +102,17 @@ function addRiddleForm(){
    
     let URL = 'http://localhost:3000//api/v1/riddles'
 
-    fetch(URL, {mode: 'cors'})
-    .then(res=>res.json())
-    .then(json=>{
-        getRiddle(json)
+    fetch(URL, {mode: 'cors', headers: {
+        'Content-Type': 'application/json',
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+        }
     })
+    .then(res=>{
+        return res.json()
+    })
+    .then(json=>{getRiddle(json)})
 }
+
 let currentRiddle;
 
 function getRiddle(json){
