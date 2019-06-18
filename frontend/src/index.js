@@ -37,17 +37,27 @@ function loadHomePageListeners(){
         loadMessageBoard();
     })
     microwave.addEventListener('click', ()=>{
-        loadMicrowaveEvent();
+        loadMicrowaveEvent(microwave);
     })
     
 }
 
-function loadMicrowaveEvent(){
+function loadMicrowaveEvent(microwave){
     document.body.style.backgroundImage ="url('images/milan.jpg')";
+    loadMicrowaveListeners(microwave);
+    let textbox = document.querySelector(".TEXT-AREA")
+    textbox.remove()
     addRiddleForm();
-    loadNavigator();
-
   }
+
+function loadMicrowaveListeners(microwave){
+
+    microwave.removeEventListener('click', ()=>{
+        loadMicrowaveEvent(microwave);
+  })
+
+    loadNavigator();
+}
 
 function loadNavigator(){
     const homepageNavigator = document.getElementById('82') 
@@ -66,18 +76,16 @@ function loadNavigator(){
 //     }
 
 function addRiddleForm(){
-    debugger
-    let riddleHeader = document.createElement('div')
-    riddleHeader.setAttribute("id", "riddle-header")
-    document.body.prepend(riddleHeader)
+    let riddleDiv = document.createElement('div')
+    document.body.prepend(riddleDiv)
     let form = document.createElement("form");
     form.id = 'riddle-form'
 
     let riddle = document.createElement('h1')
     riddle.id = 'riddle-input'
 
-    riddleHeader.appendChild(riddle)
-    riddleHeader.appendChild(form)  
+    riddleDiv.appendChild(riddle)
+    riddleDiv.appendChild(form)  
 
     let r = document.createElement('h1')
     let answerField = document.createElement("input");
@@ -107,13 +115,12 @@ function addRiddleForm(){
 let currentRiddle;
 
 function getRiddle(json){
-    let riddleHeader = document.getElementById("riddle-header");
+    let riddleDiv = document.getElementById("riddle-header");
     const riddle = json[Math.floor(Math.random()*json.length)];
     const r = document.getElementById('riddle-input')
-
     r.textContent = riddle.question
     r.classList.add('speech-bubble')
-    riddleHeader.appendChild(r)
+    riddleDiv.appendChild(r)
     currentRiddle = riddle
 }
 
@@ -133,7 +140,7 @@ function loadMessageBoard(){
 function handleRiddleAnswer(answer){
     document.getElementById('riddle-form').remove()
     answer.toLowerCase()
-    let riddleHeader = document.getElementById("riddle-header");
+    let riddleDiv = document.getElementById("riddle-header");
     let h = document.createElement('h1')
     let milanResponse;
     if (answer.includes(currentRiddle.answer)){
@@ -146,7 +153,7 @@ function handleRiddleAnswer(answer){
         setTimeout(function(){setHomePageImage(), loadHomePageListeners()}, 3000);
       }
     h.classList.add('speech-bubble')
-    riddleHeader.appendChild(h)
+    riddleDiv.appendChild(h)
     
 }
 
