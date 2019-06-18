@@ -3,7 +3,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     let textbox = document.querySelector(".TEXT-AREA")
     textbox.classList.add('text-area')
     textbox.textContent = 'Welcome to Flat Iron! Click around for a BIG SURPRISE'
-    
+  
+    setHomePageImage();
     loadHomePageListeners();
     
 });
@@ -17,7 +18,15 @@ function setHomePageImage(){
 }
 
 function loadHomePageListeners(){
+
+    let help_button = document.getElementById('11')
+    help_button.classList.add('help-button')
+
     let microwave = document.getElementById('39')
+
+    help_button.addEventListener('click', ()=>{
+        loadMessageBoard();
+    })
     microwave.addEventListener('click', ()=>{
         loadMicrowaveEvent(microwave);
     })
@@ -96,6 +105,19 @@ function getRiddle(json){
     currentRiddle = riddle
 }
 
+
+function clearScene(){
+    const container = document.getElementById("content");
+    while (container.firstChild) {
+    container.removeChild(container.firstChild);
+    }
+}
+
+function loadMessageBoard(){
+    clearScene();
+    console.log("WILL LOAD MESSAGE BOARD PAGE HERE")
+}
+
 function handleRiddleAnswer(answer){
     document.getElementById('riddle-form').remove()
     answer.toLowerCase()
@@ -113,3 +135,4 @@ function handleRiddleAnswer(answer){
     h.classList.add('speech-bubble')
     document.body.prepend(h)
 }
+

@@ -1,6 +1,4 @@
 body {
-    background-image: url('../frontend/images/IMG-5707.JPG');
-   
     background-repeat:no-repeat;
     -webkit-background-size:cover;
     -moz-background-size:cover;
@@ -26,7 +24,12 @@ body {
     background-image: url('../frontend/images/nav.png');
     background-size: contain;
     background-repeat:no-repeat;
-    
+}
+
+.help-button{
+    background-image: url('../frontend/images/helpbutton.jpg');
+    background-size: contain;
+    background-repeat:no-repeat;
 }
 
 .text-area{
