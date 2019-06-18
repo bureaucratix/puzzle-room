@@ -1,54 +1,53 @@
 window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
     let textbox = document.querySelector(".TEXT-AREA")
-    textbox.classList.add('text-area')
-    textbox.textContent = 'Welcome to Flat Iron! Click around for a BIG SURPRISE'
-  
+   
     setHomePageImage();
     loadHomePageListeners();
     
 });
-
+const container = document.getElementById("content");
 const homepageNavigator = document.getElementById('82') 
 
 function setHomePageImage(){
-    document.body.style.backgroundImage ="url('../frontend/images/IMG-5707.JPG')";  
-    removeNavigator();
+    const container = document.getElementById("content");
+    document.body.style.backgroundImage ="url('../frontend/images/IMG-5707.JPG')"; 
+    
+    let homepageDiv = document.createElement('div')
+    homepageDiv.classList.add('grid-container');
+    for(let i=0; i < 83; i++){
+        let newDiv = document.createElement('div');
+        newDiv.id = i;
+        homepageDiv.appendChild(newDiv);
+}
+    let textArea = document.createElement('text-area')
+    textArea.classList.add('text-area')
+    homepageDiv.appendChild(textArea)
+    container.appendChild(homepageDiv);
     loadHomePageListeners();
 }
 
-function loadHomePageListeners(){
 
+function loadHomePageListeners(){
     let help_button = document.getElementById('11')
     help_button.classList.add('help-button')
-
-    let microwave = document.getElementById('39')
+    let microwave = document.getElementById('38')
 
     help_button.addEventListener('click', ()=>{
         loadMessageBoard();
     })
     microwave.addEventListener('click', ()=>{
-        loadMicrowaveEvent(microwave);
+        loadMicrowaveEvent();
     })
     
 }
 
-function loadMicrowaveEvent(microwave){
+function loadMicrowaveEvent(){
     document.body.style.backgroundImage ="url('images/milan.jpg')";
-    loadMicrowaveListeners(microwave);
-    let textbox = document.querySelector(".TEXT-AREA")
-    textbox.remove()
     addRiddleForm();
-  }
-
-function loadMicrowaveListeners(microwave){
-
-    microwave.removeEventListener('click', ()=>{
-        loadMicrowaveEvent(microwave);
-  })
-    // document.querySelector(".chessboard").classList.remove("hidden");
     loadNavigator();
-}
+
+  }
 
 function loadNavigator(){
     const homepageNavigator = document.getElementById('82') 
@@ -59,27 +58,35 @@ function loadNavigator(){
     })
 }
 
-function removeNavigator(){
-    const homepageNavigator = document.getElementById('82') 
-    homepageNavigator.classList.remove('navigator')
-    }
+// Dont think we need this with new clearScene addition...
+
+//  function removeNavigator(){
+//     const homepageNavigator = document.getElementById('82') 
+//     homepageNavigator.classList.remove('navigator')
+//     }
 
 function addRiddleForm(){
+    debugger
+    let riddleHeader = document.createElement('div')
+    riddleHeader.setAttribute("id", "riddle-header")
+    document.body.prepend(riddleHeader)
     let form = document.createElement("form");
     form.id = 'riddle-form'
 
-    let riddle = document.createElement('p')
+    let riddle = document.createElement('h1')
     riddle.id = 'riddle-input'
-    document.body.appendChild(riddle)
-    document.body.appendChild(form)  
 
-    let r = document.createElement('p')
+    riddleHeader.appendChild(riddle)
+    riddleHeader.appendChild(form)  
+
+    let r = document.createElement('h1')
     let answerField = document.createElement("input");
     form.appendChild(answerField)
     
 
     let submit = document.createElement('input');
     submit.setAttribute('type','submit');
+    submit.classList.add('riddle-button')
     form.appendChild(submit)
     form.addEventListener('submit', function(event){
         
@@ -98,11 +105,15 @@ function addRiddleForm(){
     })
 }
 let currentRiddle;
+
 function getRiddle(json){
+    let riddleHeader = document.getElementById("riddle-header");
     const riddle = json[Math.floor(Math.random()*json.length)];
     const r = document.getElementById('riddle-input')
+
     r.textContent = riddle.question
     r.classList.add('speech-bubble')
+    riddleHeader.appendChild(r)
     currentRiddle = riddle
 }
 
@@ -122,6 +133,7 @@ function loadMessageBoard(){
 function handleRiddleAnswer(answer){
     document.getElementById('riddle-form').remove()
     answer.toLowerCase()
+    let riddleHeader = document.getElementById("riddle-header");
     let h = document.createElement('h1')
     let milanResponse;
     if (answer.includes(currentRiddle.answer)){
@@ -134,6 +146,7 @@ function handleRiddleAnswer(answer){
         setTimeout(function(){setHomePageImage(), loadHomePageListeners()}, 3000);
       }
     h.classList.add('speech-bubble')
-    document.body.prepend(h)
+    riddleHeader.appendChild(h)
+    
 }
 
