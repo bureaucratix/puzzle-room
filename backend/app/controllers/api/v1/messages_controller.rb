@@ -14,11 +14,17 @@ class Api::V1::MessagesController < ApplicationController
       end
       
     end
-   
+
+    def create 
+      
+      @message = Message.create(message_params)
+      render json: @message, status: :accepted
+    end 
+
     private
    
     def message_params
-      params.permit(:title, :content)
+      params.permit(:author, :content)
     end
    
     def find_message

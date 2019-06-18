@@ -18,6 +18,15 @@ body {
   grid-template-areas: ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA ." ". . . . . . . . . .";
 }
 
+.white-board-title {
+    padding: 0 2vw;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 7vw;
+    text-align: center;
+    }
+.white-board-notes{
+    font-family: "Comic Sans MS", cursive, sans-serif
+}
 .TEXT-AREA { grid-area: TEXT-AREA; }
 
 .navigator{
@@ -64,6 +73,8 @@ body {
     display: table-cell;
     vertical-align:middle;
 }
+
+
 
 .lightUp {
     background-color: lightgreen;
@@ -117,4 +128,21 @@ body {
     background: #f6b93b;
     border-color: #f6b93b !important;
     transition: all 0.4s ease 0s;
+    }
+
+
+    input {
+        border: 5px solid white; 
+        -webkit-box-shadow: 
+          inset 0 0 8px  rgba(0,0,0,0.1),
+                0 0 16px rgba(0,0,0,0.1); 
+        -moz-box-shadow: 
+          inset 0 0 8px  rgba(0,0,0,0.1),
+                0 0 16px rgba(0,0,0,0.1); 
+        box-shadow: 
+          inset 0 0 8px  rgba(0,0,0,0.1),
+                0 0 16px rgba(0,0,0,0.1); 
+        padding: 15px;
+        background: rgba(255,255,255,0.5);
+        margin: 0 0 10px 0;
     }

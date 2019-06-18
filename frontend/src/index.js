@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 
-const container = document.getElementById("content");
+let container = document.getElementById("content");
 const homepageNavigator = document.getElementById('82') 
 
 function loadHomePage(){
@@ -129,10 +129,10 @@ function clearScene(){
     }
 }
 
-function loadMessageBoard(){
-    clearScene();
-    console.log("WILL LOAD MESSAGE BOARD PAGE HERE")
-}
+// function loadMessageBoard(){
+//     clearScene();
+//     console.log("WILL LOAD MESSAGE BOARD PAGE HERE")
+// }
 
 function handleRiddleAnswer(answer){
     document.getElementById('riddle-form').remove()
@@ -154,3 +154,110 @@ function handleRiddleAnswer(answer){
     
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function loadMessageBoard(){
+    document.body.style.backgroundImage ="url('images/whiteboard.png')";
+    clearScene();
+    let URL = 'http://localhost:3000//api/v1/messages'
+    fetch(URL).then(res=>res.json())
+    .then(json=>{
+        displayMessages(json, form)
+    })
+    let header = document.createElement('h1')
+    header.textContent = 'Hints Left Behind'
+    let container = document.getElementById("content");
+    header.classList.add('white-board-title')
+    container.appendChild(header)
+    
+    let form = document.createElement("form");
+    form.id = 'note-form' 
+
+    let directions = document.createElement('h1')
+    directions.textContent = 'Leave a clue for those who follow........'
+    let answerField = document.createElement("input");
+    let answerField2 = document.createElement("input");
+    form.appendChild(directions)
+    form.appendChild(answerField)
+    form.appendChild(answerField2)
+    
+    let submit = document.createElement('input');
+    submit.setAttribute('type','submit');
+    submit.value = 'POST'
+
+    submit.classList.add('riddle-button')
+    answerField.classList.add('whiteboard-inputs')
+    answerField2.classList.add('whiteboard-inputs')
+    
+    form.appendChild(submit)
+    form.addEventListener('submit', function(event){
+        
+        event.preventDefault();
+        let answer = event
+       
+        addNote(answer)}) 
+}
+
+function displayMessages(json, form){
+    json.forEach(function(message){
+        displayMessage(message);
+    });
+    let container = document.getElementById("content");
+    container.appendChild(form)
+}
+
+function displayMessage(message){
+    let li = document.createElement('ul')
+    let t = document.createElement('h1')
+    let h3 = document.createElement('h3')
+    let p = document.createElement('p')
+    h3.textContent = message.author
+    p.textContent = message.content
+    h3.classList.add('white-board-notes')
+    p.classList.add('white-board-notes')
+    
+    document.body.appendChild(li)
+    li.appendChild(t)
+    li.appendChild(h3)
+    li.appendChild(p)
+}
+
+function addNote(answer){
+    let author = answer.target.elements[0].value
+    let content = answer.target.elements[1].value
+    let URL = 'http://localhost:3000/api/v1/messages'
+    let payload = {author: author, content: content}
+    let config = {
+        method: 'POST',
+        body: JSON.stringify(payload), // data can be `string` or {object}!
+        headers:{
+          'Content-Type': 'application/json'
+        }
+      }
+    fetch(URL, config)
+        .then(response =>
+            response.json()
+        .then(json => {
+            console.log(json);
+            displayMessage(json)
+        })
+      );
+}
