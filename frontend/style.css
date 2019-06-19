@@ -1,5 +1,5 @@
 body {
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     -webkit-background-size:cover;
     -moz-background-size:cover;
     -o-background-size:cover;
@@ -29,12 +29,12 @@ body {
 
 .white-board-title {
     padding: 0 2vw;
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: 'Indie Flower', cursive, sans-serif;
     font-size: 70px;
     text-align: center;
     }
 .white-board-notes{
-    font-family: "Comic Sans MS", cursive, sans-serif
+    font-family: 'Indie Flower', cursive, sans-serif
 }
 .TEXT-AREA { grid-area: TEXT-AREA; }
 
@@ -63,6 +63,13 @@ body {
     border: double;
 }
 
+#main-title{
+    font-family: 'Eater', serif;
+    font-size: 70px;
+    text-align: center;
+}
+
+/*----------------------------------------------------*/
 /* chessboard css styling */
 .chessboard {
     width: 640px;
@@ -128,6 +135,12 @@ body {
 	margin-left: -21.5px;
     margin-bottom: -43px;
     
+}
+
+
+#index-box {
+    text-align: center;
+    font-family: 'Marcellus SC', serif;
 }
 
 

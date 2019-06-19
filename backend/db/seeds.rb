@@ -8,6 +8,11 @@
 
 Riddle.delete_all
 Message.delete_all
+User.delete_all
+
+alex = User.create(name: "Alex", chess_complete: true)
+
+Message.create(author: "Alex", content: "Hello!", user: alex)
 
 Riddle.create(question:'Voiceless it cries, 
 Wingless flutters,
