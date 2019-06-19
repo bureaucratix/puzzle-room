@@ -175,3 +175,48 @@ body {
         background: rgba(255,255,255,0.5);
         margin: 0 0 10px 0;
     }
+
+    .blinking{
+        animation:blinkingText 1s infinite;
+        
+    }
+    @keyframes blinkingText{
+        0%{     color: rgb(143, 38, 38);    }
+        49%{    color: transparent; }
+        50%{    color: transparent; }
+        100%{   color: rgb(201, 20, 20);    }
+    }
+
+    .middle {
+        left: 100;
+        line-height: 200px;
+        margin: auto;
+        margin-top: -100px;
+        position: absolute;
+        top: 50%;
+        width: 500%;
+    }
+
+    .center-letter-paper {
+        position: fixed;
+        width: 200px;
+        height: 200px;
+        top: 50%;
+        left: 50%;
+        margin-top: -100px; 
+        margin-left: -100px;
+      }
+
+      .center-letter {
+        position: fixed;
+        width: 200px;
+        height: 200px;
+        top: 63%;
+        left: 63%;
+        margin-top: -100px; 
+        margin-left: -100px;
+      }
+
+      .clickable { 
+        cursor: pointer;
+      }
