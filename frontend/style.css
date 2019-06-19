@@ -46,8 +46,14 @@ body {
 
 .TEXT-AREA { grid-area: TEXT-AREA; }
 
-.help-button{
+#help-button{
     background-image: url('../frontend/images/helpbutton.jpg');
+    background-size: contain;
+    background-repeat:no-repeat;
+}
+
+#knight-button{
+    background-image: url('../frontend/images/knighticon.png');
     background-size: contain;
     background-repeat:no-repeat;
 }
