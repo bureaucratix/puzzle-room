@@ -1,15 +1,8 @@
 window.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
-    loadHomePage();
+    dragDrop();
 });
 
-<<<<<<< HEAD
-
-let container = document.getElementById("content");
-const homepageNavigator = document.getElementById('82') 
-
-=======
->>>>>>> 22af18f71f5d01d9cb5aba372cc711c8c9ccdc5c
 function loadHomePage(){
     clearScene();
     const container = document.getElementById("content");
@@ -40,6 +33,42 @@ function loadHomePage(){
         loadRiddlePage();
     })
 }
+
+
+function loadHomePage2(){
+    clearScene();
+    const container = document.getElementById("content");
+    document.body.style.backgroundImage ="url('../frontend/images/IMG-5707.JPG')"; 
+    
+    let gridContainer = document.createElement('div')
+    gridContainer.classList.add('grid-container');
+    for(let i=0; i < 83; i++){
+        let newDiv = document.createElement('div');
+        newDiv.id = i;
+        gridContainer.appendChild(newDiv);
+    }
+    let textArea = document.createElement('text-area')
+    textArea.classList.add('text-area')
+    textArea.textContent = '[[TEXT BOX AREA. MAIN PAGE HELLO]]'
+    gridContainer.appendChild(textArea)
+    container.appendChild(gridContainer);
+
+    //load listeners for homepage(HELP, MICROWAVE, MESSASGE BOARD)
+    let help_button = document.getElementById('11')
+    help_button.classList.add('help-button')
+    help_button.classList.add('clickable')
+    let coffee = document.getElementById('34')
+    coffee.classList.add('clickable')
+
+
+    help_button.addEventListener('click', ()=>{
+        loadMessageBoard();
+    })
+    coffee.addEventListener('click', ()=>{
+        loadCoffeePage();
+    })
+}
+
 
 
 function loadRiddlePage(){
@@ -133,10 +162,6 @@ function clearScene(){
     }
 }
 
-// function loadMessageBoard(){
-//     clearScene();
-//     console.log("WILL LOAD MESSAGE BOARD PAGE HERE")
-// }
 
 function handleRiddleAnswer(answer){
     document.getElementById('riddle-form').remove()
@@ -147,7 +172,7 @@ function handleRiddleAnswer(answer){
     if (answer.includes(currentRiddle.answer)){
         milanResponse = 'Correct, young budding software developer!! I have unlocked a special feature in the kitchen just for you... perhaps forgo the booch and go get your caffeine fix *HINT HINT*'
         h.textContent = milanResponse
-        setTimeout(function(){ loadHomePage()}, 3000);
+        setTimeout(function(){ loadHomePage()}, 5000);
       }else{
         milanResponse = `nope, dummy. The answer is ${currentRiddle.answer}! Don't come back here until you are ready for this HEAT.`
         h.textContent = milanResponse
@@ -158,24 +183,21 @@ function handleRiddleAnswer(answer){
     
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function loadCoffeePage(){
+    clearScene();
+    let container = document.getElementById('content')
+    document.body.style.backgroundImage ="url('images/coffee.jpg')";
+    let text = document.createElement('h1')
+    text.textContent = 'KNOCK ME OVER!'
+    text.classList.add('middle')
+    text.classList.add('middle')
+    text.classList.add('blinking')
+    text.classList.add('clickable')
+    text.addEventListener('click', ()=>{
+        loadInsideCoffePage();
+    })
+    container.appendChild(text)
+}
 
 
 function loadMessageBoard(){
@@ -265,3 +287,19 @@ function addNote(answer){
         })
       );
 }
+
+function loadInsideCoffePage(){
+    clearScene();
+    document.body.style.backgroundImage ="url('images/coffee-letter.jpg')";
+    let letter = document.createElement('IMG')
+    letter.src = '/Users/hannaengel/Development/projects/puzzle-room/frontend/images/letter.png'
+    let container = document.getElementById('content')
+    letter.classList.add('center-letter-paper')
+    container.appendChild(letter)
+
+    let h1 = document.createElement('h1')
+    h1.classList.add('center-letter')
+    h1.textContent = 'C'
+    container.appendChild(h1)
+}
+
