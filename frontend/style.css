@@ -3,9 +3,19 @@ body {
     -webkit-background-size:cover;
     -moz-background-size:cover;
     -o-background-size:cover;
-    background-size:cover;
-    background-position:center;
+    background-size:1200px, 800px;
+    background-position:left;
+    width: 1200px;
+    height: 800px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
   }
+
+#content {
+    height: 800px;
+    width: 1200px;
+}
 
 
   .grid-container {
@@ -20,7 +30,7 @@ body {
 .white-board-title {
     padding: 0 2vw;
     font-family: "Comic Sans MS", cursive, sans-serif;
-    font-size: 7vw;
+    font-size: 70px;
     text-align: center;
     }
 .white-board-notes{
@@ -36,8 +46,14 @@ body {
 
 .TEXT-AREA { grid-area: TEXT-AREA; }
 
-.help-button{
+#help-button{
     background-image: url('../frontend/images/helpbutton.jpg');
+    background-size: contain;
+    background-repeat:no-repeat;
+}
+
+#knight-button{
+    background-image: url('../frontend/images/knighticon.png');
     background-size: contain;
     background-repeat:no-repeat;
 }
@@ -110,7 +126,8 @@ body {
 	border-bottom: 0;
 	border-left: 0;
 	margin-left: -21.5px;
-	margin-bottom: -43px;
+    margin-bottom: -43px;
+    
 }
 
 
@@ -122,17 +139,28 @@ body {
     border: 4px solid #494949 !important;
     border-radius: 6px;
     display: inline-block;
-    }
+    width: 150px;
+}
 
 .riddle-button:hover {
     color: #ffffff !important;
     background: #f6b93b;
     border-color: #f6b93b !important;
     transition: all 0.4s ease 0s;
-    }
+}
 
+#note-form{
+    margin-left: 50px;
+}
+
+#messages-div {
+    height: 450px;
+    margin-left: 50px;
+    overflow-y: scroll;
+}
 
     input {
+        width: 300px;
         border: 5px solid white; 
         -webkit-box-shadow: 
           inset 0 0 8px  rgba(0,0,0,0.1),

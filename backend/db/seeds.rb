@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Riddle.delete_all
+Message.delete_all
 
 Riddle.create(question:'Voiceless it cries, 
 Wingless flutters,
