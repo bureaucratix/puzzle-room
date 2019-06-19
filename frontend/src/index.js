@@ -3,13 +3,6 @@ window.addEventListener('DOMContentLoaded', () => {
     loadHomePage();
 });
 
-<<<<<<< HEAD
-
-let container = document.getElementById("content");
-const homepageNavigator = document.getElementById('82') 
-
-=======
->>>>>>> 22af18f71f5d01d9cb5aba372cc711c8c9ccdc5c
 function loadHomePage(){
     clearScene();
     const container = document.getElementById("content");
@@ -56,13 +49,13 @@ function loadRiddlePage(){
     container.appendChild(gridContainer)
     loadBackButton();
     addRiddleForm();
-  }
+}
 
 function loadBackButton(){
-    const backDiv = document.getElementById('59') 
-    const backbutton = document.createElement('img')
-    backbutton.src = "./images/down.png"
-    backDiv.appendChild(backbutton)
+    const backDiv = document.getElementById('59');
+    const backbutton = document.createElement('img');
+    backbutton.src = "./images/down.png";
+    backDiv.appendChild(backbutton);
     backDiv.addEventListener('click', ()=>{
         loadHomePage();
     })
@@ -186,14 +179,29 @@ function loadMessageBoard(){
     .then(json=>{
         displayMessages(json, form)
     })
+    let messagesDiv = document.createElement('div')
+    let backButton = document.createElement('img');
+    let topBar = document.createElement('div')
     let header = document.createElement('h1')
-    header.textContent = 'Hints Left Behind'
     let container = document.getElementById("content");
-    header.classList.add('white-board-title')
-    container.appendChild(header)
-    
     let form = document.createElement("form");
+
     form.id = 'note-form' 
+    messagesDiv.setAttribute('id', 'messages-div')
+    header.textContent = 'Hints Left Behind'
+    header.classList.add('white-board-title')
+    topBar.appendChild(backButton)
+    topBar.appendChild(header)
+    container.appendChild(topBar)
+    container.appendChild(form)
+    container.appendChild(messagesDiv)
+
+    backButton.src = "./images/left.png";
+    topBar.appendChild(backButton);
+    backButton.style= "position: absolute; top: 20px; left: 50px; height: 100px; width: 100px;"
+    backButton.addEventListener('click', ()=>{
+        loadHomePage();
+    })
 
     let directions = document.createElement('h1')
     directions.textContent = 'Leave a clue for those who follow........'
@@ -221,27 +229,26 @@ function loadMessageBoard(){
 }
 
 function displayMessages(json, form){
-    json.forEach(function(message){
+      json.forEach(function(message){
         displayMessage(message);
     });
-    let container = document.getElementById("content");
-    container.appendChild(form)
+    
 }
 
 function displayMessage(message){
-    let li = document.createElement('ul')
-    let t = document.createElement('h1')
+    let messageDiv = document.querySelector("#messages-div");
+    let div = document.createElement('div')
     let h3 = document.createElement('h3')
     let p = document.createElement('p')
     h3.textContent = message.author
     p.textContent = message.content
     h3.classList.add('white-board-notes')
     p.classList.add('white-board-notes')
-    
-    document.body.appendChild(li)
-    li.appendChild(t)
-    li.appendChild(h3)
-    li.appendChild(p)
+
+    div.appendChild(h3)
+    div.appendChild(p)
+    messageDiv.appendChild(div)
+
 }
 
 function addNote(answer){
