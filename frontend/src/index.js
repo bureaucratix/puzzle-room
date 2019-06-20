@@ -1,7 +1,8 @@
 let activeUser = {}
+
 window.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
-   
+
    loadFrontPage()
     // loadKitchen()
 });
@@ -45,7 +46,7 @@ function loadFrontPage(){
         event.preventDefault();
         let name = event.target[0].value
         createUser(name)
-        loadKitchen()
+
     }) 
 }
 
@@ -61,5 +62,40 @@ function createUser(name) {
     .then(res => res.json())
     .then(json => {
         activeUser = json
+        loadKitchen()
     })
+
+}
+
+function updateUser(user){
+
+    let URL = 'http://localhost:3000/api/v1/users'
+    let user_url = URL + '/' + user.id
+    console.log(user)
+    fetch(user_url, {
+        method: 'PUT', 
+        headers:{
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user) 
+    }).then(res => res.json())
+    .then(response => {
+    console.log(response);
+    })
+    console.log(user)
+}
+
+
+
+function showLetter(alpha){
+    let container = document.getElementById('content')
+    let letterPaper = document.createElement('img')
+    letterPaper.classList.add('center-letter-paper')
+    let letter = document.createElement('h1')
+    letter.classList.add('center-letter')
+    letterPaper.src ='/Users/hannaengel/Development/projects/puzzle-room/frontend/images/letter.png';
+    letter.textContent = alpha
+    container.appendChild(letterPaper)
+    container.appendChild(letter)
+
 }

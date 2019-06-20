@@ -24,13 +24,14 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA ." ". . . . . . . . . ." ;
+
+  grid-template-areas: ". . . . . . LETTER1 LETTER2 LETTER3 LETTER4" ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA ." ". . . . . . . . . .";
 }
 
 .white-board-title {
     padding: 0 2vw;
     font-family: 'Indie Flower', cursive, sans-serif;
-    font-size: 70px;
+    font-size: 65px;
     text-align: center;
     }
 .white-board-notes{
@@ -49,21 +50,26 @@ body {
 
 .TEXT-AREA { grid-area: TEXT-AREA; }
 
-#left-button{
-    background-image: url('../frontend/images/helpbutton.jpg');
-    background-size: contain;
-    background-repeat:no-repeat;
+
+.LETTER1 { grid-area: LETTER1; }
+.LETTER2 { grid-area: LETTER2; }
+.LETTER3 { grid-area: LETTER3; }
+.LETTER4 { grid-area: LETTER4; }
+
+.letter-text-center{
+  text-align: center;
+  vertical-align: middle;
+  line-height: 75px;
 }
 
-#knight-button{
-    background-image: url('../frontend/images/knighticon.png');
-    background-size: contain;
-    background-repeat:no-repeat;
-}
 
 .text-area{
-    background-color: coral;
-    border: double;
+    background-color: lightgray;
+    opacity: 0.8;
+    text-align: center;
+    font-size: 200%;
+    text-transform: 
+    
 }
 
 #main-title{
@@ -232,16 +238,85 @@ body {
         margin-left: -100px;
       }
 
+      
       .center-letter {
         position: fixed;
         width: 200px;
         height: 200px;
-        top: 63%;
-        left: 63%;
-        margin-top: -100px; 
-        margin-left: -100px;
+        top: 53%;
+        left: 57%;
+        margin-top: -90px; 
+        margin-left: -120px;
+        font-size:140px;
       }
 
       .clickable { 
         cursor: pointer;
       }
+
+      /*----------------------------------------------------*/
+/* dragPage css styling */
+  #d-container {
+    background-color: rgb(212, 221, 169);
+     } 
+   
+     #j-container {
+       width: 100%;
+       height: 800px;
+      \
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       overflow: hidden;
+       border-radius: 7px;
+       touch-action: none;
+     }
+     #d-item {
+   
+       touch-action: none;
+       user-select: none;
+     }
+     #d-item:active {
+   
+     }
+     #d-item:hover {
+       cursor: pointer;
+       border-width: 50px;
+     }
+     #j-item {
+       touch-action: none;
+       user-select: none;
+       z-index: 1;
+     }
+     #j-item:active {
+       background-color: rgb(252, 0, 252);
+     }
+     #j-item:hover {
+       cursor: pointer;
+       border-width: 50px;
+     }
+   
+     #jk-item {
+   
+       touch-action: none;
+       user-select: none;
+     }
+     #jk-item:active {
+       background-color: rgb(252, 0, 252);
+     }
+     #jk-item:hover {
+       cursor: pointer;
+       border-width: 50px;
+     }
+   
+   
+   
+     .top {
+       left: 100;
+       line-height: 200px;
+       margin: auto;
+       
+       position: absolute;
+       top: 10%;
+       width: 500%;
+   }
