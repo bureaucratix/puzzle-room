@@ -220,3 +220,141 @@ body {
       .clickable { 
         cursor: pointer;
       }
+/* 
+      .drop-container {
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      
+      .drop-zone {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        overflow: hidden;
+        background: #878787;
+        color: white;
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+      }
+      
+      .drop-zone {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+
+
+ul li {
+    list-style-type: none;
+  }
+  .drop-img {
+    cursor: pointer;
+    width: 200px;
+  } */
+
+
+
+  #d-container {
+    width: 100%;
+    height: 800px;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 7px;
+    touch-action: none;
+  }
+
+  #j-container {
+    width: 100%;
+    height: 800px;
+   \
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 7px;
+    touch-action: none;
+  }
+  #d-item {
+
+    touch-action: none;
+    user-select: none;
+  }
+  #d-item:active {
+    background-color: rgb(252, 0, 252);
+  }
+  #d-item:hover {
+    cursor: pointer;
+    border-width: 50px;
+  }
+  #j-item {
+    touch-action: none;
+    user-select: none;
+    z-index: 1;
+  }
+  #j-item:active {
+    background-color: rgb(252, 0, 252);
+  }
+  #j-item:hover {
+    cursor: pointer;
+    border-width: 50px;
+  }
+
+  #jk-item {
+
+    touch-action: none;
+    user-select: none;
+  }
+  #jk-item:active {
+    background-color: rgb(252, 0, 252);
+  }
+  #jk-item:hover {
+    cursor: pointer;
+    border-width: 50px;
+  }
+
+  .contentBlock1 {
+ 
+    width: 400px;
+    height: 250px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    border-width: 50px;
+     
+    }
+
+    .contentBlock2 {
+ 
+      width: 400px;
+      height: 250px;
+      position: fixed;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      border-width: 50px;
+      border-color: coral;
+
+      }
+
+      .instructions {
+ 
+        width: 400px;
+        height: 250px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin-left: auto;
+        margin-right: auto;
+        border-width: 500px;
+     
+        }
