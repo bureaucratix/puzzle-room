@@ -17,7 +17,7 @@ function loadMessageBoard(){
     messagesDiv.setAttribute('id', 'messages-div')
     header.textContent = 'Hints Left Behind'
     header.classList.add('white-board-title')
-    topBar.appendChild(backButton)
+    // topBar.appendChild(backButton)
     topBar.appendChild(header)
     container.appendChild(topBar)
     container.appendChild(form)
