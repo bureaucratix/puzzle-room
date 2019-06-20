@@ -1,6 +1,6 @@
 function loadMessageBoard(){
-    document.body.style.backgroundImage ="url('images/whiteboard.png')";
     clearScene();
+    document.body.style.backgroundImage ="url('images/whiteboard.png')";
     let URL = 'http://localhost:3000//api/v1/messages'
     fetch(URL).then(res=>res.json())
     .then(json=>{
@@ -17,7 +17,7 @@ function loadMessageBoard(){
     messagesDiv.setAttribute('id', 'messages-div')
     header.textContent = 'Hints Left Behind'
     header.classList.add('white-board-title')
-    topBar.appendChild(backButton)
+    // topBar.appendChild(backButton)
     topBar.appendChild(header)
     container.appendChild(topBar)
     container.appendChild(form)
@@ -33,10 +33,8 @@ function loadMessageBoard(){
     let directions = document.createElement('h1')
     directions.textContent = 'Leave a clue for those who follow...'
     let answerField = document.createElement("input");
-    let answerField2 = document.createElement("input");
     form.appendChild(directions)
     form.appendChild(answerField)
-    form.appendChild(answerField2)
     
     let submit = document.createElement('input');
     submit.setAttribute('type','submit');
@@ -44,7 +42,6 @@ function loadMessageBoard(){
 
     submit.classList.add('riddle-button')
     answerField.classList.add('whiteboard-inputs')
-    answerField2.classList.add('whiteboard-inputs')
     
     form.appendChild(submit)
     form.addEventListener('submit', function(event){
@@ -79,10 +76,10 @@ function displayMessage(message){
 }
 
 function addNote(answer){
-    let author = answer.target.elements[0].value
-    let content = answer.target.elements[1].value
+    let author = activeUser.name
+    let content = answer.target[0].value
     let URL = 'http://localhost:3000/api/v1/messages'
-    let payload = {author: author, content: content}
+    let payload = {message: {author: activeUser.name, content: content, user_id: activeUser.id}}
     let config = {
         method: 'POST',
         body: JSON.stringify(payload), // data can be `string` or {object}!

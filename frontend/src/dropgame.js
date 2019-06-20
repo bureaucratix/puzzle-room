@@ -104,7 +104,8 @@
 
 
 
-function drag(){
+function loadDragPage(){
+  clearScene();
   var active = false;
   var currentX;
   var currentY;
