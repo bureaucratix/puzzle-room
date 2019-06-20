@@ -18,8 +18,6 @@ function loadKitchen(){
     container.appendChild(gridContainer);
 
   loadKitchenNavButton()
-
-
     
     // knightButton.addEventListener('click', ()=>{
     //     loadChessPage();
@@ -28,22 +26,26 @@ function loadKitchen(){
     microwave.addEventListener('click', ()=>{
         loadRiddlePage();
     })
-}
 
-function loadKitchenNavButton(){
-    const backDiv = document.getElementById('20');
-    const backbutton = document.createElement('img');
-    backbutton.src = "./images/left.png";
-    backDiv.appendChild(backbutton);
-    backDiv.addEventListener('click', ()=>{
-        loadCommons();
+    let dragButton = document.getElementById('60');
+        dragButton.addEventListener('click', ()=>{
+    loadDragPage();
     })
-}
-    dragButton.addEventListener('click', ()=>{
-     loadDragPage();
-    })
+
+
+    function loadKitchenNavButton(){
+        const backDiv = document.getElementById('20');
+        const backbutton = document.createElement('img');
+        backbutton.src = "./images/left.png";
+        backDiv.appendChild(backbutton);
+        backDiv.addEventListener('click', ()=>{
+            loadCommons();
+        })
+    }
+
 
     if(activeUser.riddle_complete ==true){
+    let coffeeButton = document.getElementById('34')
     coffeeButton.classList.add('clickable')
     microwave.classList.remove('clickable')
     coffeeButton.addEventListener('click', ()=>{
@@ -53,7 +55,7 @@ function loadKitchenNavButton(){
 
     if(activeUser.riddle_complete ==true){
         let letter1 = document.createElement('img')
-        letter1.src = '/Users/hannaengel/Development/projects/puzzle-room/frontend/images/small-letter.png'
+        letter1.src = 'images/small-letter.png'
         let letterText = document.createElement('h1')
         letter1.classList.add('LETTER1')
         letterText.classList.add('LETTER1')
@@ -67,7 +69,7 @@ function loadKitchenNavButton(){
 
     if(activeUser.drag_complete ==true){
         let letter2 = document.createElement('img')
-        letter2.src = '/Users/hannaengel/Development/projects/puzzle-room/frontend/images/small-letter.png'
+        letter2.src = 'images/small-letter.png'
         let letterText = document.createElement('h1')
         letter2.classList.add('LETTER2')
         letterText.classList.add('LETTER2')
@@ -81,7 +83,7 @@ function loadKitchenNavButton(){
 
     if(activeUser.chess_complete ==true){
         let letter3 = document.createElement('img')
-        letter3.src = '/Users/hannaengel/Development/projects/puzzle-room/frontend/images/small-letter.png'
+        letter3.src = 'images/small-letter.png'
         let letterText = document.createElement('h1')
         letter3.classList.add('LETTER3')
         letterText.classList.add('LETTER3')
@@ -95,7 +97,7 @@ function loadKitchenNavButton(){
 
     if(activeUser.math_complete ==true){
         let letter4 = document.createElement('img')
-        letter4.src = '/Users/hannaengel/Development/projects/puzzle-room/frontend/images/small-letter.png'
+        letter4.src = 'images/small-letter.png'
         let letterText = document.createElement('h1')
         letter4.classList.add('LETTER4')
         letterText.classList.add('LETTER4')
@@ -105,6 +107,5 @@ function loadKitchenNavButton(){
         gridContainer.appendChild(letter4)
         gridContainer.appendChild(letterText)
         container.appendChild(gridContainer);
-        } 
-    }
-
+    } 
+}
