@@ -24,7 +24,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA .";
+  grid-template-areas: ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA ." ". . . . . . . . . ." ;
 }
 
 .white-board-title {
@@ -49,7 +49,7 @@ body {
 
 .TEXT-AREA { grid-area: TEXT-AREA; }
 
-#help-button{
+#left-button{
     background-image: url('../frontend/images/helpbutton.jpg');
     background-size: contain;
     background-repeat:no-repeat;

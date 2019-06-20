@@ -84,11 +84,11 @@ function loadChessPage() {
     addClickToAll()
 
     let backButton = document.createElement('img')
-    backButton.src = "./images/left.png";
+    backButton.src = "./images/right.png";
     container.appendChild(backButton);
     backButton.style= "float: left; height: 100px; width: 100px;"
     backButton.addEventListener('click', ()=>{
-        loadKitchen();
+        loadCommons();
     })
 
 }

@@ -93,11 +93,12 @@ function handleRiddleAnswer(answer){
         milanResponse = 'Correct, young one! Perhaps you ought to celebrate with a nice warm cup of joe?'
         // active_user update riddle_complete
         h.textContent = milanResponse
-        setTimeout(function(){ loadKitchen()}, 3000);
+        // setTimeout(function(){ loadKitchen()}, 3000);
       }else{
-        milanResponse = `No... Why would you think that?? Disgusting... Don't come back here until you are ready for this HEAT.`
+        milanResponse = `No... Why would you think that?? Disgusting... 
+        Don't come back here until you are ready for this HEAT.`
         h.textContent = milanResponse
-        setTimeout(function(){loadKitchen()}, 3000);
+        // setTimeout(function(){loadKitchen()}, 3000);
       }
     h.classList.add('speech-bubble')
     riddleDiv.appendChild(h)

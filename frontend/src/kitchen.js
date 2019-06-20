@@ -16,20 +16,24 @@ function loadKitchen(){
     gridContainer.appendChild(textArea)
     container.appendChild(gridContainer);
 
-  
-    let helpButton = document.getElementById('11')
-    helpButton.setAttribute('id', 'help-button')
-    let knightButton = document.getElementById('20')
-    knightButton.setAttribute('id', 'knight-button')
-    let microwave = document.getElementById('38')
+  loadKitchenNavButton()
 
-    helpButton.addEventListener('click', ()=>{
-        loadMessageBoard();
-    })
-    knightButton.addEventListener('click', ()=>{
-        loadChessPage();
-    })
+    
+    // knightButton.addEventListener('click', ()=>{
+    //     loadChessPage();
+    // })
+    let microwave = document.getElementById('38')
     microwave.addEventListener('click', ()=>{
         loadRiddlePage();
+    })
+}
+
+function loadKitchenNavButton(){
+    const backDiv = document.getElementById('20');
+    const backbutton = document.createElement('img');
+    backbutton.src = "./images/left.png";
+    backDiv.appendChild(backbutton);
+    backDiv.addEventListener('click', ()=>{
+        loadCommons();
     })
 }

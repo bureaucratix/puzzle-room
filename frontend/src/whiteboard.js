@@ -27,7 +27,7 @@ function loadMessageBoard(){
     topBar.appendChild(backButton);
     backButton.style= "position: absolute; top: 20px; left: 50px; height: 100px; width: 100px;"
     backButton.addEventListener('click', ()=>{
-        loadKitchen();
+        loadCommons();
     })
 
     let directions = document.createElement('h1')
