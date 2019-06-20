@@ -2,7 +2,10 @@ let activeUser = {}
 window.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
 
+<<<<<<< HEAD
    
+=======
+>>>>>>> 7eb8b52ea90d5dcd0cf95c90b3d681a29d6a3e86
    loadFrontPage()
     // loadKitchen()
 });
@@ -15,8 +18,11 @@ function clearScene(){
     }
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 7eb8b52ea90d5dcd0cf95c90b3d681a29d6a3e86
 function loadFrontPage(){
     clearScene()
     const container = document.getElementById('content')
@@ -34,9 +40,11 @@ function loadFrontPage(){
 
     let form = document.createElement('form')
     form.classList.add('user-form')
+
     let input = document.createElement('input')
     let submit = document.createElement('input')
     submit.setAttribute('type', 'submit')
+
 
     div.appendChild(p)
     div.appendChild(form)
