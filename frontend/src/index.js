@@ -93,7 +93,7 @@ function showLetter(alpha){
     letterPaper.classList.add('center-letter-paper')
     let letter = document.createElement('h1')
     letter.classList.add('center-letter')
-    letterPaper.src ='/Users/hannaengel/Development/projects/puzzle-room/frontend/images/letter.png';
+    letterPaper.src ='images/letter.png';
     letter.textContent = alpha
     container.appendChild(letterPaper)
     container.appendChild(letter)

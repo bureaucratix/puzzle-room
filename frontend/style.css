@@ -25,7 +25,7 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 
-  grid-template-areas: ". . . . . . LETTER1 LETTER2 LETTER3 LETTER4" ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA ." ". . . . . . . . . .";
+  grid-template-areas: ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA ." ". . . . . . . . . .";
 }
 
 .white-board-title {
@@ -50,11 +50,6 @@ body {
 
 .TEXT-AREA { grid-area: TEXT-AREA; }
 
-
-.LETTER1 { grid-area: LETTER1; }
-.LETTER2 { grid-area: LETTER2; }
-.LETTER3 { grid-area: LETTER3; }
-.LETTER4 { grid-area: LETTER4; }
 
 .letter-text-center{
   text-align: center;
