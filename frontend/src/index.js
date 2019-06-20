@@ -1,7 +1,7 @@
 let activeUser = {}
 window.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
-   
+
    loadFrontPage()
     // loadKitchen()
 });
@@ -62,4 +62,5 @@ function createUser(name) {
     .then(json => {
         activeUser = json
     })
+
 }

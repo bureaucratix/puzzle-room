@@ -12,7 +12,7 @@ function loadKitchen(){
     }
     let textArea = document.createElement('text-area')
     textArea.classList.add('text-area')
-    textArea.textContent = '[[TEXT BOX AREA. MAIN PAGE HELLO]]'
+    textArea.textContent = 'Click around for clues...'
     gridContainer.appendChild(textArea)
     container.appendChild(gridContainer);
 
@@ -22,6 +22,7 @@ function loadKitchen(){
     let knightButton = document.getElementById('20')
     knightButton.setAttribute('id', 'knight-button')
     let microwave = document.getElementById('38')
+    let dragButton = document.getElementById('70')
 
     helpButton.addEventListener('click', ()=>{
         loadMessageBoard();
@@ -31,5 +32,8 @@ function loadKitchen(){
     })
     microwave.addEventListener('click', ()=>{
         loadRiddlePage();
+    })
+    dragButton.addEventListener('click', ()=>{
+     loadDragPage();
     })
 }

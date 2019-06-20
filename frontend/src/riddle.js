@@ -92,7 +92,10 @@ function handleRiddleAnswer(answer){
     if (answer.includes(currentRiddle.answer)){
         milanResponse = 'Correct, young one! Perhaps you ought to celebrate with a nice warm cup of joe?'
         // active_user update riddle_complete
-        h.textContent = milanResponse
+        h.textContent = milanResponse 
+        activeUser.riddle_complete = true
+        console.log(activeUser)
+        
         setTimeout(function(){ loadKitchen()}, 3000);
       }else{
         milanResponse = `No... Why would you think that?? Disgusting... Don't come back here until you are ready for this HEAT.`

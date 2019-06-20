@@ -62,8 +62,12 @@ body {
 }
 
 .text-area{
-    background-color: coral;
-    border: double;
+    background-color: lightgray;
+    opacity: 0.8;
+    text-align: center;
+    font-size: 200%;
+    text-transform: 
+    
 }
 
 #main-title{
@@ -245,3 +249,70 @@ body {
       .clickable { 
         cursor: pointer;
       }
+
+      /*----------------------------------------------------*/
+/* dragPage css styling */
+  #d-container {
+    background-color: rgb(212, 221, 169);
+     } 
+   
+     #j-container {
+       width: 100%;
+       height: 800px;
+      \
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       overflow: hidden;
+       border-radius: 7px;
+       touch-action: none;
+     }
+     #d-item {
+   
+       touch-action: none;
+       user-select: none;
+     }
+     #d-item:active {
+   
+     }
+     #d-item:hover {
+       cursor: pointer;
+       border-width: 50px;
+     }
+     #j-item {
+       touch-action: none;
+       user-select: none;
+       z-index: 1;
+     }
+     #j-item:active {
+       background-color: rgb(252, 0, 252);
+     }
+     #j-item:hover {
+       cursor: pointer;
+       border-width: 50px;
+     }
+   
+     #jk-item {
+   
+       touch-action: none;
+       user-select: none;
+     }
+     #jk-item:active {
+       background-color: rgb(252, 0, 252);
+     }
+     #jk-item:hover {
+       cursor: pointer;
+       border-width: 50px;
+     }
+   
+   
+   
+     .top {
+       left: 100;
+       line-height: 200px;
+       margin: auto;
+       
+       position: absolute;
+       top: 10%;
+       width: 500%;
+   }
