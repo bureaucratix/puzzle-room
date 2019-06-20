@@ -35,7 +35,7 @@ function loadDragPage(){
   let submit = document.createElement('input')
   let formDiv = document.createElement('div')
   submit.setAttribute('type', 'submit')
-  input.placeholder = "Who wrote this..";
+  input.placeholder = "Who said this..";
   form.id = 'form'
   
  
@@ -190,12 +190,17 @@ function loadDragPage(){
           contentDiv.appendChild(h2)
           h2.textContent = 'E'
           activeUser.drag_complete = true
-          console.log(activeUser)
-          
-          
-    }else{
-      alert("Nope! Try again.");
-      }
-
+          updateUser(activeUser);
+          setTimeout(function(){ loadKitchen()}, 3000);
+        }else{
+        alert("Nope! Try again.");
+        }
+    let backButton = document.createElement('img')
+    backButton.src = "./images/left.png";
+    contentDiv.appendChild(backButton);
+    backButton.style= "position: absolute; top: 20px; left: 50px; height: 100px; width: 100px;"
+    backButton.addEventListener('click', ()=>{
+      loadKitchen();
     })
-  }
+  })
+}

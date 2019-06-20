@@ -94,9 +94,8 @@ function handleRiddleAnswer(answer){
         // active_user update riddle_complete
         h.textContent = milanResponse 
         activeUser.riddle_complete = true
-        console.log(activeUser)
-        
-        setTimeout(function(){ loadKitchen()}, 3000);
+          updateUser(activeUser);
+     
       }else{
         milanResponse = `No... Why would you think that?? Disgusting... Don't come back here until you are ready for this HEAT.`
         h.textContent = milanResponse

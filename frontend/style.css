@@ -24,13 +24,13 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA .";
+  grid-template-areas: ". . . . . . LETTER1 LETTER2 LETTER3 LETTER4" ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA TEXT-AREA .";
 }
 
 .white-board-title {
     padding: 0 2vw;
     font-family: 'Indie Flower', cursive, sans-serif;
-    font-size: 70px;
+    font-size: 65px;
     text-align: center;
     }
 .white-board-notes{
@@ -48,6 +48,17 @@ body {
 }
 
 .TEXT-AREA { grid-area: TEXT-AREA; }
+
+.LETTER1 { grid-area: LETTER1; }
+.LETTER2 { grid-area: LETTER2; }
+.LETTER3 { grid-area: LETTER3; }
+.LETTER4 { grid-area: LETTER4; }
+
+.letter-text-center{
+  text-align: center;
+  vertical-align: middle;
+  line-height: 75px;
+}
 
 #help-button{
     background-image: url('../frontend/images/helpbutton.jpg');
@@ -236,14 +247,16 @@ body {
         margin-left: -100px;
       }
 
+      
       .center-letter {
         position: fixed;
         width: 200px;
         height: 200px;
-        top: 63%;
-        left: 63%;
-        margin-top: -100px; 
-        margin-left: -100px;
+        top: 53%;
+        left: 57%;
+        margin-top: -90px; 
+        margin-left: -120px;
+        font-size:140px;
       }
 
       .clickable { 
