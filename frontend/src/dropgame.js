@@ -126,15 +126,30 @@ function drag(){
   let h3 = document.createElement('h1')
   h3.textContent = "Drag the images around to solve the puzzle!"
   h3.classList.add('instructions')
-  circleDiv.appendChild(h3)
+  
   circle.src = "/Users/hannaengel/Development/projects/puzzle-room/frontend/images/b3.png"
   circleDiv.id = 'd-container'
   circle.id = 'd-item'
+  document.body.style.backgroundColor = 'rgb(212, 221, 169)'
+ 
+
+  //form 
+  let form = document.createElement('form')
+  let input = document.createElement('input')
+  let submit = document.createElement('input')
+  let formDiv = document.createElement('div')
+  submit.setAttribute('type', 'submit')
+  input.placeholder = "Who wrote this..";
+  form.id = 'form'
+  
  
   
-  circleDiv.appendChild(answer1)
-  circleDiv.appendChild(answer2)
-  circleDiv.appendChild(answer3)
+  form.appendChild(input)
+  form.appendChild(submit)
+  
+  
+  
+  formDiv.appendChild(form)
   contentDiv.appendChild(circleDiv)
   circleDiv.appendChild(circle)
   circleDiv.addEventListener("mousedown", function(e){
@@ -177,6 +192,7 @@ function drag(){
     circlej.src = "/Users/hannaengel/Development/projects/puzzle-room/frontend/images/b1.png"
     circlej.id = 'j-item'
     circleDiv.appendChild(circlej)
+    circleDiv.appendChild(h3)
     circlej.addEventListener("mousedown", function(e){
       e.preventDefault();
       
@@ -254,7 +270,36 @@ function drag(){
       dragItem.style.transform = "translate3d(" + currentXjk + "px, " + currentYjk + "px, 0)";
       }
     });
-    
+    contentDiv.appendChild(formDiv)
+
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault()
+      let answer = ev.target.elements[0].value
+      answer.toLowerCase()
+      if (answer.includes('hamlet')){
+        console.log('correct!')
+        while (contentDiv.firstChild) {
+          contentDiv.removeChild(contentDiv.firstChild);
+        }
+          let h1 = document.createElement('h1')
+          h1.classList.add('top')
+          let letter = document.createElement('IMG')
+          let h2 = document.createElement('h1')
+          letter.src = '/Users/hannaengel/Development/projects/puzzle-room/frontend/images/letter.png'
+          letter.classList.add('center-letter-paper')
+          h2.classList.add('center-letter')
+          h1.textContent = 'Correct! Here is another piece of the puzzle...'
+          contentDiv.appendChild(h1)
+          contentDiv.appendChild(letter)
+          contentDiv.appendChild(h2)
+          h2.textContent = 'E'
+          
+          
+    }else{
+      alert("Nope! Try again.");
+      }
+
+    })
   }
 
 
