@@ -86,14 +86,16 @@ function handleRiddleAnswer(answer){
     document.getElementById('riddle-form').remove()
     answer.toLowerCase()
     let riddleDiv = document.getElementById("riddle-header");
+    riddleDiv.removeChild(riddleDiv.lastChild)
     let h = document.createElement('h1')
     let milanResponse;
     if (answer.includes(currentRiddle.answer)){
-        milanResponse = 'Correct, young budding software developer!! I have unlocked a special feature in the kitchen just for you... perhaps forgo the booch and go get your caffeine fix *HINT HINT*'
+        milanResponse = 'Correct, young one! Perhaps you ought to celebrate with a nice warm cup of joe?'
+        // active_user update riddle_complete
         h.textContent = milanResponse
         setTimeout(function(){ loadKitchen()}, 3000);
       }else{
-        milanResponse = `nope, dummy. The answer is ${currentRiddle.answer}! Don't come back here until you are ready for this HEAT.`
+        milanResponse = `No... Why would you think that?? Disgusting... Don't come back here until you are ready for this HEAT.`
         h.textContent = milanResponse
         setTimeout(function(){loadKitchen()}, 3000);
       }
