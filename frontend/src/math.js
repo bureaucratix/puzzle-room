@@ -31,9 +31,16 @@ function loadMathPage(){
     mathForm.appendChild(formsub)
     formDiv.appendChild(mathForm)
     mathForm.addEventListener('submit', function(ev){
-        //DOESN'T WORK
-        ev.preventDefault();
-        //fetch post math_complete if correct
+    ev.preventDefault();
+    if (ev.target.elements[0].value === '12'){      
+     showLetter('A');
+     activeUser.math_complete = true 
+    updateUser(activeUser)
+    setTimeout(function(){ loadCommons()}, 2000);
+    
+        }else{
+            window.alert('Nope! Here is a hint---this math problem is base 6')
+        }
     })
 }
 
