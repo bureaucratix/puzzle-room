@@ -75,6 +75,7 @@ function loadKitchen(){
     if(activeUser.found_complete ==true){
         const letter1div = document.getElementById('4')
         letter1div.classList.add('small-letter-div')
+
         let letter1 = document.createElement('img')
         letter1.src = 'images/small-letter.png'
         let letterText = document.createElement('h1')

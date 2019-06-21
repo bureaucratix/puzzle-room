@@ -43,11 +43,12 @@ function addRiddleForm(){
 
     let r = document.createElement('h2')
     let answerField = document.createElement("input");
+    answerField.classList.add('textinput')
     form.appendChild(answerField)
     
     let submit = document.createElement('input');
     submit.setAttribute('type','submit');
-    submit.classList.add('riddle-button')
+    submit.classList.add('textinput')
     form.appendChild(submit)
     form.addEventListener('submit', function(event){
         

@@ -33,7 +33,9 @@ function loadFrontPage(){
     let form = document.createElement('form')
     form.classList.add('user-form')
     let input = document.createElement('input')
+    input.classList.add('textinput')
     let submit = document.createElement('input')
+    submit.classList.add('textinput')
     submit.setAttribute('type', 'submit')
 
     div.appendChild(p)
