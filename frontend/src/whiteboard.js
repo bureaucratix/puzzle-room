@@ -41,7 +41,7 @@ function loadMessageBoard(){
     submit.value = 'POST'
 
     submit.classList.add('riddle-button')
-    answerField.classList.add('whiteboard-inputs')
+    answerField.classList.add('textinput')
     
     form.appendChild(submit)
     form.addEventListener('submit', function(event){

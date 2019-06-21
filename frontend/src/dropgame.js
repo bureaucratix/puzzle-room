@@ -35,6 +35,8 @@ function loadDragPage(){
   let submit = document.createElement('input')
   let formDiv = document.createElement('div')
   submit.setAttribute('type', 'submit')
+  submit.classList.add('textinput')
+  input.classList.add('textinput')
   input.placeholder = "Who said this..";
   form.id = 'form'
   
