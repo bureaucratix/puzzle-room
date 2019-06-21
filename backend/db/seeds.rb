@@ -10,7 +10,7 @@ Riddle.delete_all
 Message.delete_all
 User.delete_all
 
-alex = User.create(name: "Alex", chess_complete: true)
+alex = User.create(name: "mathboy", math_complete: true)
 
 Message.create(author: "Alex", content: "Hello!", user: alex)
 
@@ -22,12 +22,6 @@ Riddle.create(question:'What has roots as nobody sees,
 Is taller than trees,
 Up, up it goes,
 And yet never grows?', answer:'mountain')
-Riddle.create(question:'An eye in a blue face
-Saw an eye in a green face.
-"That eye is like to this eye"
-Said the first eye,
-"But in low place,
-Not in high place."', answer:'sun')
 Riddle.create(question:'A box without hinges, key, or lid,
 Yet golden treasure inside is hid.', answer:'egg')
 Riddle.create(question:'This thing all things devours:
