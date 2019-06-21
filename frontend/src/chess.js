@@ -133,6 +133,8 @@ function addWinEvent(){
             img.classList.add("breakout")
             img.src = "images/k.png"
             document.getElementById("28").appendChild(img)
+            activeUser.chess_complete = true 
+            updateUser(activeUser)
 
         }        
     })

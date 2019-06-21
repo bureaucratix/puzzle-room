@@ -23,7 +23,7 @@ function loadDragPage(){
   h3.textContent = "Drag the images around to solve the puzzle!"
   h3.classList.add('instructions')
   
-  circle.src = "images/b3.png"
+  circle.src = "/Users/hannaengel/Development/projects/puzzle-room/frontend/images/b3.png"
   circleDiv.id = 'd-container'
   circle.id = 'd-item'
   document.body.style.backgroundColor = 'rgb(212, 221, 169)'
@@ -87,7 +87,7 @@ function loadDragPage(){
     var yOffsetj = 0;
 
     let circlej = document.createElement('IMG')
-    circlej.src = "images/b1.png"
+    circlej.src = "/Users/hannaengel/Development/projects/puzzle-room/frontend/images/b1.png"
     circlej.id = 'j-item'
     circleDiv.appendChild(circlej)
     circleDiv.appendChild(h3)
@@ -183,14 +183,14 @@ function loadDragPage(){
           h1.classList.add('top')
           let letter = document.createElement('IMG')
           let h2 = document.createElement('h1')
-          letter.src = 'images/letter.png'
+          letter.src = '/Users/hannaengel/Development/projects/puzzle-room/frontend/images/letter.png'
           letter.classList.add('center-letter-paper')
           h2.classList.add('center-letter')
           h1.textContent = 'Correct! Here is another piece of the puzzle...'
           contentDiv.appendChild(h1)
           contentDiv.appendChild(letter)
           contentDiv.appendChild(h2)
-          h2.textContent = 'E'
+          h2.textContent = 'C'
           activeUser.drag_complete = true
           updateUser(activeUser);
           setTimeout(function(){ loadKitchen()}, 3000);

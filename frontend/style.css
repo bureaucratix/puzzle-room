@@ -84,10 +84,26 @@ body {
     max-height: 100px;
 }
 
+.TEXT-AREA { grid-area: TEXT-AREA; }
+
+.small-letter-div{
+  position: relative;
+}
+
+.small-letter{
+position: absolute;
+top: 0;
+left: 40;
+text-align: center;
+vertical-align: middle;
+line-height: 75px;
+}
+
 .letter-text-center{
   text-align: center;
   vertical-align: middle;
   line-height: 75px;
+  z-index: 1;
 }
 
 

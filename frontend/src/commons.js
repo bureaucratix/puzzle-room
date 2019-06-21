@@ -2,7 +2,7 @@ function loadCommons(){
     clearScene();
     const container = document.getElementById("content");
     document.body.style.backgroundImage ="url('../frontend/images/commons.png')"; 
-    
+ 
     let gridContainer = document.createElement('div')
     gridContainer.classList.add('grid-container');
     for(let i=0; i < 83; i++){
@@ -83,6 +83,14 @@ function loadCommonsBackButton(){
     backDiv.addEventListener('click', ()=>{
         loadKitchen();
     })
+
+    
+let exitDiv = document.getElementById('2')
+exitDiv.classList.add('clickable')
+exitDiv.addEventListener('click', function(){
+    window.alert('Nice try, loser! You have to solve the puzzles first >:-)');
+})
+
 }
 
 // helpButton.addEventListener('click', ()=>{
