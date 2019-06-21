@@ -13,7 +13,7 @@ function loadKitchen(){
     }
     let textArea = document.createElement('text-area')
     textArea.classList.add('text-area')
-    textArea.textContent = 'Click around for clues...'
+    textArea.textContent = 'You find yourself in the kitchen, of all places. Better look around.'
     gridContainer.appendChild(textArea)
     container.appendChild(gridContainer);
 
@@ -75,6 +75,7 @@ function loadKitchen(){
     if(activeUser.found_complete ==true){
         const letter1div = document.getElementById('4')
         letter1div.classList.add('small-letter-div')
+
         let letter1 = document.createElement('img')
         letter1.src = 'images/small-letter.png'
         let letterText = document.createElement('h1')

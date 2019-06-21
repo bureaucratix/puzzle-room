@@ -39,10 +39,16 @@ function loadCommons(){
         loadChessPage();
     })
 
+    let vent = document.getElementById('7')
+    vent.classList.add("clickable")
+    vent.addEventListener('click', ()=>{
+        loadMathPage();
+    })
+
     let note = document.getElementById('57')
     note.classList.add("clickable")
     note.addEventListener('click', ()=>{
-        textArea.textContent ="The note reads: 14 + 22 = 40 | 2 + 2 = 4 | 24 + 2 = 30 ... A clue? Or is someone just really bad at math?"
+        textArea.textContent ="The note reads: 0, 1, 2, 3, 4, 5, 10, 11, 12, 13, 14, 15, 20, 21... Sounds like someone doesn't know how to count"
     })
 
     let doorpanel = document.getElementById('20')

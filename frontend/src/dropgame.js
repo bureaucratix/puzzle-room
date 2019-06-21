@@ -23,7 +23,7 @@ function loadDragPage(){
   h3.textContent = "Drag the images around to solve the puzzle!"
   h3.classList.add('instructions')
   
-  circle.src = "/Users/hannaengel/Development/projects/puzzle-room/frontend/images/b3.png"
+  circle.src = "images/b3.png"
   circleDiv.id = 'd-container'
   circle.id = 'd-item'
   document.body.style.backgroundColor = 'rgb(212, 221, 169)'
@@ -35,6 +35,8 @@ function loadDragPage(){
   let submit = document.createElement('input')
   let formDiv = document.createElement('div')
   submit.setAttribute('type', 'submit')
+  submit.classList.add('textinput')
+  input.classList.add('textinput')
   input.placeholder = "Who said this..";
   form.id = 'form'
   
@@ -85,7 +87,7 @@ function loadDragPage(){
     var yOffsetj = 0;
 
     let circlej = document.createElement('IMG')
-    circlej.src = "/Users/hannaengel/Development/projects/puzzle-room/frontend/images/b1.png"
+    circlej.src = "images/b1.png"
     circlej.id = 'j-item'
     circleDiv.appendChild(circlej)
     circleDiv.appendChild(h3)
@@ -171,8 +173,7 @@ function loadDragPage(){
     form.addEventListener('submit', function(ev){
       ev.preventDefault()
       let answer = ev.target.elements[0].value
-      answer.toLowerCase()
-      if (answer.includes('hamlet')){
+      if (answer.toLowerCase().includes('hamlet')){
         console.log('correct!')
         while (contentDiv.firstChild) {
           contentDiv.removeChild(contentDiv.firstChild);
@@ -181,10 +182,10 @@ function loadDragPage(){
           h1.classList.add('top')
           let letter = document.createElement('IMG')
           let h2 = document.createElement('h1')
-          letter.src = '/Users/hannaengel/Development/projects/puzzle-room/frontend/images/letter.png'
+          letter.src = 'images/letter.png'
           letter.classList.add('center-letter-paper')
           h2.classList.add('center-letter')
-          h1.textContent = 'Correct! Here is another piece of the puzzle...'
+          h1.textContent = "That's right! Inexplicably, this leads you to look under the stool and find this scrap of paper"
           contentDiv.appendChild(h1)
           contentDiv.appendChild(letter)
           contentDiv.appendChild(h2)
@@ -193,14 +194,15 @@ function loadDragPage(){
           updateUser(activeUser);
           setTimeout(function(){ loadKitchen()}, 3000);
         }else{
-        alert("Nope! Try again.");
+        alert("Nothing happened...");
         }
-    let backButton = document.createElement('img')
-    backButton.src = "./images/left.png";
-    contentDiv.appendChild(backButton);
-    backButton.style= "position: absolute; top: 20px; left: 50px; height: 100px; width: 100px;"
-    backButton.addEventListener('click', ()=>{
-      loadKitchen();
-    })
+  
+  })
+  let backButton = document.createElement('img')
+  backButton.src = "./images/left.png";
+  contentDiv.appendChild(backButton);
+  backButton.style= "position: absolute; top: 20px; left: 50px; height: 100px; width: 100px;"
+  backButton.addEventListener('click', ()=>{
+    loadKitchen();
   })
 }
