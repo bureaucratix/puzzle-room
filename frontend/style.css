@@ -383,3 +383,52 @@ line-height: 75px;
        top: 10%;
        width: 500%;
    }
+
+   .winner-text {
+    color: transparent;
+    background: #000000;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    font-size: 400%;
+     text-align: center;
+     padding: 10%;
+    }
+
+    .winner-link-1{
+ 
+      font-size: 200%;
+       text-align: center;
+       position: fixed;
+      bottom: 80px;
+     
+      }
+
+
+    .winner-link-2{
+ 
+      font-size: 200%;
+       text-align: center;
+       position: fixed;
+       right: 80px;
+      bottom: 80px;
+      }
+
+a:link {
+color: pink;
+}
+
+/* A link that has been visited */
+a:visited {
+    color: rgb(0, 255, 64);
+}
+
+/* A link that is hovered on */
+a:hover {
+    color: rgb(129, 129, 194);
+}
+
+/* A link that is selected */
+a:active {
+    color: green;
+}
