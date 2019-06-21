@@ -84,13 +84,12 @@ function getRiddle(json){
 }
 
 function handleRiddleAnswer(answer){
-    document.getElementById('riddle-form').remove()
-    answer.toLowerCase()
+    
     let riddleDiv = document.getElementById("riddle-header");
     riddleDiv.removeChild(riddleDiv.lastChild)
     let h = document.createElement('h1')
     let milanResponse;
-    if (answer.includes(currentRiddle.answer)){
+    if (answer.toLowerCase().includes(currentRiddle.answer)){
         milanResponse = 'Correct, young one! Perhaps you ought to celebrate with a nice warm cup of joe?'
         h.textContent = milanResponse 
         activeUser.riddle_complete = true

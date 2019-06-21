@@ -33,7 +33,33 @@ function loadDoorPanel(){
   forminput.setAttribute('maxlength', '4')
   finalForm.appendChild(forminput)
   gridContainer.appendChild(formDiv)
+  let formsub = document.createElement('input')
+  formsub.classList.add('final-form-submit')
+  formsub.setAttribute('type','submit');
+  formsub.setAttribute('value', "VERIFY EXIT TICKET")
+  finalForm.appendChild(formsub)
   formDiv.appendChild(finalForm)
+  finalForm.addEventListener("submit", (ev)=>{
+      ev.preventDefault();
+      let exitTicket = ev.target[0].value.toLowerCase();
+      if (exitTicket == "cake") {
+        console.log("Correct ticket")
+        if(activeUser.drag_complete ==true &&
+        activeUser.math_complete ==true &&
+        activeUser.chess_complete ==true &&
+        activeUser.found_complete ==true) {
+            console.log("letters verified")
+            //Timestamp completion time stretch goal
+            loadWinnerPage();
+        } else {
+            console.log("Letters not complete")
+            textArea.textContent = "Nothing happened, even though that's the right code. No skipping! :^)"
+        }
+      } else {
+          console.log("Incorrect ticket")
+          textArea.textContent = "Nothing happened. I'm sure there are clues around, there always are..."
+      }
+  })
 
 } 
 

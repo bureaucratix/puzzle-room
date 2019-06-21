@@ -2,7 +2,7 @@ let activeUser = {}
 
 window.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
-    loadWinnerPage();
+    loadFrontPage();
     // loadKitchen()
 });
 

@@ -185,7 +185,7 @@ function loadDragPage(){
           letter.src = 'images/letter.png'
           letter.classList.add('center-letter-paper')
           h2.classList.add('center-letter')
-          h1.textContent = "That's right! Inexplicably, this leads you to look under the stool and find this scrap of paper"
+          h1.textContent = "That's right! Inexplicably, this leads you to look under the stool and find this:"
           contentDiv.appendChild(h1)
           contentDiv.appendChild(letter)
           contentDiv.appendChild(h2)
