@@ -36,6 +36,7 @@ body {
   height: 100px;
   background-color: rgb(231, 219, 202);
   color:black;
+  
   font-weight: bold;
   font-family: 'sans-serif';
   font-size: 50px;
@@ -44,11 +45,17 @@ body {
 }
 
 .math-form-submit{
-  font-size: 60px;
-    text-transform: uppercase;
-    background: #ffffff;
-    width: 100px;
-    height: 100px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 
 .final-form-input{
@@ -400,6 +407,7 @@ line-height: 75px;
        width: 500%;
    }
 
+   /* winner page styling */
    .winner-text {
     color: transparent;
     background: #000000;
@@ -430,21 +438,20 @@ line-height: 75px;
       bottom: 80px;
       }
 
+
+/* winner page link styling  */
+
 a:link {
 color: pink;
 }
 
-/* A link that has been visited */
 a:visited {
     color: rgb(0, 255, 64);
 }
-
-/* A link that is hovered on */
 a:hover {
     color: rgb(129, 129, 194);
 }
 
-/* A link that is selected */
 a:active {
     color: green;
 }
